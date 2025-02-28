@@ -1,7 +1,5 @@
 # Zaffron (Dotfiles) - "I use Arch, BTW!"
 
----
-
 ##### This is configuration for setting up my arch OS with proper config files on the go
 
 ## How to setup
