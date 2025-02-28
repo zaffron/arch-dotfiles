@@ -1,0 +1,71 @@
+[
+  {
+    "include": [
+      "$HOME/.config/waybar/Modules",
+      "$HOME/.config/waybar/ModulesWorkspaces",
+      "$HOME/.config/waybar/ModulesCustom",
+      "$HOME/.config/waybar/ModulesGroups"
+    ],
+    "layer": "top",
+    "exclusive": true,
+    "passthrough": false,
+    "position": "top",
+    "spacing": 3,
+    "fixed-center": true,
+    "ipc": true,
+    "margin-top": 1,
+    "margin-left": 8,
+    "margin-right": 8,
+    "modules-left": [
+      "cpu",
+      "temperature",
+      "memory",
+      "disk"
+    ],
+    "modules-center": [
+      "idle_inhibitor",
+      "custom/weather",
+      "clock",
+      "custom/cava_mviz",
+      "custom/swaync"
+    ],
+    "modules-right": [
+      "pulseaudio/slider",
+      "custom/updater",
+      "custom/cycle_wall",
+      "custom/lock"
+    ]
+  },
+  {
+    "include": [
+      "$HOME/.config/waybar/Modules",
+      "$HOME/.config/waybar/ModulesWorkspaces",
+      "$HOME/.config/waybar/ModulesCustom",
+      "$HOME/.config/waybar/ModulesGroups"
+    ],
+    "layer": "top",
+    "exclusive": true,
+    "passthrough": false,
+    "position": "bottom",
+    "spacing": 5,
+    "fixed-center": true,
+    "ipc": true,
+    "height": 0,
+    "margin-left": 8,
+    "margin-right": 8,
+    "modules-left": [
+      "wlr/taskbar"
+    ],
+    "modules-center": [
+      "hyprland/workspaces#rwz"
+    ],
+    "modules-right": [
+      "hyprland/window",
+      "tray",
+      "mpris",
+      "pulseaudio",
+      "pulseaudio#microphone",
+      "custom/power"
+    ]
+  }
+]
