@@ -42,8 +42,12 @@ return {
 			return {
 				"",
 				"",
-				"         ⚡ Installed Plugins: " .. plugin_count,
-				"💡 Making mistakes is the path to Wisdom",
+				"              ⚡ Installed Plugins: " .. plugin_count,
+				"",
+				"------------------------------------------------------------",
+				"Himmel tried, but he couldn't pull the sword from the stone.",
+				"Even without the fabled sword, he managed to save the world.",
+				"                   He was the real hero",
 			}
 		end
 

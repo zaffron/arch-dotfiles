@@ -82,5 +82,6 @@ SAVEHIST=10000
 setopt appendhistory
 
 alias vim='nvim'
-
-
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"

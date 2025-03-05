@@ -128,6 +128,7 @@ return {
 				end,
 			},
 			sources = {
+				{ name = "supermaven" },
 				{ name = "render-markdown" },
 				{ name = "nvim_lsp" },
 				{ name = "luasnip", keyword_length = 2 },

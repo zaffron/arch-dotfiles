@@ -1,0 +1,83 @@
+#!/bin/bash
+# /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
+# Keyhints. Idea got from Garuda Hyprland
+
+# GDK BACKEND. Change to either wayland or x11 if having issues
+BACKEND=wayland
+
+# Check if rofi is running and kill it if it is
+if pgrep -x "rofi" > /dev/null; then
+    pkill rofi
+fi
+
+# Detect monitor resolution and scale
+x_mon=$(hyprctl -j monitors | jq '.[] | select(.focused==true) | .width')
+y_mon=$(hyprctl -j monitors | jq '.[] | select(.focused==true) | .height')
+hypr_scale=$(hyprctl -j monitors | jq '.[] | select (.focused == true) | .scale' | sed 's/\.//')
+
+# Calculate width and height based on percentages and monitor resolution
+width=$((x_mon * hypr_scale / 100))
+height=$((y_mon * hypr_scale / 100))
+
+# Set maximum width and height
+max_width=1200
+max_height=1000
+
+# Set percentage of screen size for dynamic adjustment
+percentage_width=70
+percentage_height=70
+
+# Calculate dynamic width and height
+dynamic_width=$((width * percentage_width / 100))
+dynamic_height=$((height * percentage_height / 100))
+
+# Limit width and height to maximum values
+dynamic_width=$(($dynamic_width > $max_width ? $max_width : $dynamic_width))
+dynamic_height=$(($dynamic_height > $max_height ? $max_height : $dynamic_height))
+
+IMAGE_PATH="$HOME/.config/hypr/images/pickachu-200.png"
+
+# Launch yad with image on top and a clean table below
+GDK_BACKEND=$BACKEND yad ---width=$dynamic_width --height=$dynamic_height \
+    --center \
+    --image="$IMAGE_PATH" \
+    --image-on-top \
+    --title="Keybindings - Hyprland" \
+    --no-buttons \
+    --text="📜 **Hyprland Keybindings**\n💡 Himmel tried, but he still couldn't pull of the sword" \
+    --separator=" " \
+    --columns=3 \
+    --list \
+    --column="Key" --column="Description" --column="Command" \
+    "ESC" "Close this app" "" \
+    "=" "SUPER KEY (Windows Key)" "(SUPER KEY)" \
+    " Enter" "Terminal" "(kitty)" \
+    " SHIFT Enter" "DropDown Terminal" "(kitty-pyprland)" \
+    " SHIFT K" "Searchable Keybinds" "(Keybinds)" \
+    " A" "Desktop Overview" "(AGS Overview)" \
+    " D" "Application Launcher" "(rofi-wayland)" \
+    " T" "Open File Manager" "(Thunar)" \
+    " S" "Google Search (Rofi)" "(rofi)" \
+    " Q" "Close Active Window (Not Kill)" "" \
+    " Shift Q" "Kill Active Window" "(kill)" \
+    " Z" "Desktop Zoom" "(pyprland)" \
+    " Alt V" "Clipboard Manager" "(cliphist)" \
+    " W" "Choose Wallpaper" "(Wallpaper Menu)" \
+    " SHIFT W" "Choose Wallpaper Effects" "(imagemagick + swww)" \
+    "CTRL ALT W" "Random Wallpaper" "(via swww)" \
+    " B" "Toggle Waybar" "(waybar)" \
+    " CTRL B" "Choose Waybar Styles" "(waybar styles)" \
+    " ALT B" "Choose Waybar Layout" "(waybar layout)" \
+    " ALT R" "Reload Waybar & Swaync" "Check Notifications First!" \
+    " SHIFT N" "Launch Notification Panel" "(swaync Notification Center)" \
+    " Print" "Screenshot (Full)" "(grim)" \
+    " SHIFT Print" "Screenshot (Region)" "(grim + slurp)" \
+    " SHIFT S" "Screenshot (Swappy)" "(swappy)" \
+    "CTRL ALT P" "Power Menu" "(wlogout)" \
+    "CTRL ALT L" "Screen Lock" "(hyprlock)" \
+    "CTRL ALT Del" "Exit Hyprland" "(Save Your Work!)" \
+    " F" "Fullscreen Toggle" "" \
+    " SHIFT G" "Game Mode (Toggle Animations)" "" \
+    " H" "Launch This App" "" \
+    " E" "Edit Keybinds & Settings" "" \
+    "" "More Tips:" "https://github.com/JaKooLit/Hyprland-Dots/wiki"
