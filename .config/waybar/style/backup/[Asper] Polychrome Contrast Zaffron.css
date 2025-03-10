@@ -1,3 +1,5 @@
+/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
+/* Light - MonoChrome Contrast */
 @import "../waybar/wallust/colors-waybar.css";
 @import "../waybar/style/catppuccin-themes/mocha.css";
 
@@ -34,7 +36,7 @@ tooltip label {
 .modules-right {
   background-color: @color9;
   color: @text;
-  border-radius: 5px;
+  border-radius: 10px;
   padding-top: 2px;
   padding-bottom: 2px;
   padding-right: 4px;
@@ -45,7 +47,7 @@ tooltip label {
 .modules-center {
   background-color: @color9;
   color: @text;
-  border-radius: 5px;
+  border-radius: 10px;
   padding-top: 2px;
   padding-bottom: 2px;
   padding-right: 4px;
@@ -55,7 +57,7 @@ tooltip label {
 .modules-left {
   background-color: @color9;
   color: @text;
-  border-radius: 5px;
+  border-radius: 10px;
   padding-top: 2px;
   padding-bottom: 2px;
   padding-right: 4px;
@@ -69,7 +71,7 @@ tooltip label {
   box-shadow: none;
   text-shadow: none;
   padding: 0px;
-  border-radius: 5px;
+  border-radius: 9px;
   padding-left: 8px;
   padding-right: 8px;
   margin-left: 2px;

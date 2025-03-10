@@ -52,6 +52,9 @@ return {
 			vim.keymap.set("n", "<leader>vca", function()
 				vim.lsp.buf.code_action()
 			end, vim.tbl_deep_extend("force", opts, { desc = "LSP Code Action" }))
+			vim.keymap.set("n", "<leader>vce", function()
+				vim.diagnostic.open_float(nil, { focusable = false })
+			end, vim.tbl_deep_extend("force", opts, { desc = "Show error message" }))
 			vim.keymap.set("n", "<leader>vrr", function()
 				vim.lsp.buf.references()
 			end, vim.tbl_deep_extend("force", opts, { desc = "LSP References" }))
@@ -72,7 +75,6 @@ return {
 				"lua_ls",
 				"jsonls",
 				"html",
-				"elixirls",
 				"tailwindcss",
 				"tflint",
 				"pylsp",

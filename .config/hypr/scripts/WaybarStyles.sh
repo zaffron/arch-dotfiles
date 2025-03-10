@@ -1,6 +1,4 @@
 #!/bin/bash
-# /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
-# Script for waybar styles
 
 IFS=$'\n\t'
 
@@ -12,38 +10,34 @@ rofi_config="$HOME/.config/rofi/config-waybar-style.rasi"
 
 # Function to display menu options
 menu() {
-    options=()
-    while IFS= read -r file; do
-        if [ -f "$waybar_styles/$file" ]; then
-            options+=("$(basename "$file" .css)")
-        fi
-    done < <(find "$waybar_styles" -maxdepth 1 -type f -name '*.css' -exec basename {} \; | sort)
-    
-    printf '%s\n' "${options[@]}"
+    find "$waybar_styles" -maxdepth 1 -type l -name '*.css' -exec basename {} .css \; | sort
 }
 
 # Apply selected style
 apply_style() {
-    ln -sf "$waybar_styles/$1.css" "$waybar_style"
-    "${SCRIPTSDIR}/Refresh.sh" &
+    local style_file="$waybar_styles/$1.css"
+
+    if [[ ! -f "$style_file" ]]; then
+        echo "Error: Style '$1' not found."
+        exit 1
+    fi
+
+    ln -sf "$style_file" "$waybar_style"
+    exec "${SCRIPTSDIR}/Refresh.sh" &
 }
 
 # Main function
 main() {
     choice=$(menu | rofi -i -dmenu -config "$rofi_config")
 
-    if [[ -z "$choice" ]]; then
-        echo "No option selected. Exiting."
-        exit 0
-    fi
+    [[ -z "$choice" ]] && echo "No option selected. Exiting." && exit 0
 
     apply_style "$choice"
 }
 
-# Kill Rofi if already running before execution
+# Kill only the oldest Rofi instance if running
 if pgrep -x "rofi" >/dev/null; then
-    pkill rofi
-    #exit 0
+    pkill -o rofi
 fi
 
 main
