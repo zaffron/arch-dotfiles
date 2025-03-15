@@ -41,7 +41,8 @@
     },
     "mpris": {
       "image-size": 50,
-      "image-radius": 0
+      "image-radius": 0,
+      "blacklist": ["playerctld", ".*chrome.*"]
     },
     "volume": {
       "label": "󰕾"
