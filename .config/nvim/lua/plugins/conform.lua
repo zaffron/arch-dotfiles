@@ -1,3 +1,8 @@
+local webdev_opts = {
+	stop_after_first = true,
+	"prettierd",
+	"prettier",
+}
 return {
 	"stevearc/conform.nvim",
 	event = { "BufWritePre" },
@@ -20,14 +25,14 @@ return {
 		formatters_by_ft = {
 			lua = { "stylua" },
 			python = { "isort", "black" },
-			javascript = { "prettierd", "prettier", stop_after_first = true },
-			typescript = { "prettier" },
-			typescriptreact = { "prettier" },
-			javascriptreact = { "prettier" },
-			css = { "prettier" },
-			html = { "prettier" },
-			json = { "prettier" },
-			markdown = { "prettier" },
+			javascript = webdev_opts,
+			typescript = webdev_opts,
+			typescriptreact = webdev_opts,
+			javascriptreact = webdev_opts,
+			css = webdev_opts,
+			html = webdev_opts,
+			json = webdev_opts,
+			markdown = webdev_opts,
 			["markdown.mdx"] = { "prettier", "markdownlint-cli2", "markdown-toc" },
 		},
 		-- Set default options

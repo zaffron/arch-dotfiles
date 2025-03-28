@@ -5,6 +5,7 @@ return {
 		"MunifTanjim/nui.nvim",
 		"rcarriga/nvim-notify",
 	},
+	enabled = true,
 	config = function()
 		local noice = require("noice")
 

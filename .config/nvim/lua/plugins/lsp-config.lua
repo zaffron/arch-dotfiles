@@ -1,6 +1,7 @@
 return {
 	"VonHeikemen/lsp-zero.nvim",
 	branch = "v4.x",
+	enabled = false,
 	dependencies = {
 		-- LSP Support
 		{ "neovim/nvim-lspconfig" },
@@ -62,8 +63,13 @@ return {
 			map("n", "K", vim.lsp.buf.hover, { desc = "LSP Hover", buffer = bufnr })
 			map("n", "<leader>vws", vim.lsp.buf.workspace_symbol, { desc = "LSP Workspace Symbol", buffer = bufnr })
 			map("n", "<leader>vd", vim.diagnostic.setloclist, { desc = "LSP Show Diagnostics", buffer = bufnr })
-			map("n", "[d", vim.diagnostic.goto_next, { desc = "Next Diagnostic", buffer = bufnr })
-			map("n", "]d", vim.diagnostic.goto_prev, { desc = "Previous Diagnostic", buffer = bufnr })
+			map("n", "[d", vim.diagnostic.jump, { desc = "Next Diagnostic", buffer = bufnr, count = 1, float = true })
+			map(
+				"n",
+				"]d",
+				vim.diagnostic.jump,
+				{ desc = "Previous Diagnostic", buffer = bufnr, count = 1, float = true }
+			)
 			map("n", "<leader>vca", vim.lsp.buf.code_action, { desc = "LSP Code Action", buffer = bufnr })
 			map("n", "<leader>vce", function()
 				vim.diagnostic.open_float(nil, { focusable = false })
