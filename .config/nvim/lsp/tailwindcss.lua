@@ -1,4 +1,3 @@
----@type vim.lsp.Config
 return {
 	cmd = { "tailwindcss", "--stdio" },
 	root_markers = {

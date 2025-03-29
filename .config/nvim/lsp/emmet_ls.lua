@@ -1,4 +1,3 @@
----@type vim.lsp.Config
 return {
 	cmd = { "emmet_ls", "--stdio" },
 	single_file_support = true,

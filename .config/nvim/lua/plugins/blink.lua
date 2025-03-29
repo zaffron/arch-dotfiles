@@ -25,14 +25,12 @@ return {
 					},
 				},
 				keymap = {
-					["<C-f>"] = {},
+					-- I will try to learn this, liking C-y better
+					preset = "default",
 				},
 				cmdline = {
 					enabled = true,
 					completion = { menu = { auto_show = true } },
-					keymap = {
-						["<CR>"] = { "accept_and_enter", "fallback" },
-					},
 				},
 				completion = {
 					menu = {

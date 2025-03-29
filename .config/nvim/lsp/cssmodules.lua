@@ -1,4 +1,3 @@
----@type vim.lsp.Config
 return {
 	cmd = { "cssmodules_ls", "--stdio" },
 	filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },

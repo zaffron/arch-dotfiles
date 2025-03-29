@@ -1,4 +1,3 @@
----@type vim.lsp.Config
 return {
 	cmd = { "cssls", "--stdio" },
 	filetypes = { "css", "scss", "less" },

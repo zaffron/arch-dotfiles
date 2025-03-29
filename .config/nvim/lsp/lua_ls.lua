@@ -1,6 +1,5 @@
----@type vim.lsp.Config
 return {
-	cmd = { "lua_ls" },
+	cmd = { "lua_ls", "--stdio" },
 	root_markers = {
 		".luarc.json",
 		".luarc.jsonc",
