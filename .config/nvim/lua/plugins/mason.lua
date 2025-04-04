@@ -8,7 +8,6 @@ local ensure_installed = {
 	"html",
 	"pyright",
 	"tailwindcss",
-	"ts_ls",
 	"vtsls",
 	"dockerls",
 	"bashls",

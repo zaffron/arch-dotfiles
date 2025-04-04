@@ -1,4 +1,4 @@
 return {
-	cmd = { "jsonls", "--stdio" },
+	cmd = { "vscode-json-language-server", "--stdio" },
 	filetypes = { "json", "jsonc" },
 }

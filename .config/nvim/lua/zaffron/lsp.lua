@@ -1,17 +1,16 @@
-vim.lsp.enable({
-	"eslint",
-	"lua_ls",
-	"cssmodules",
-	"cssls",
-	"json",
-	"emmet_ls",
-	"marksman",
-	"vtsls",
-	"ts_ls",
-	"tailwindcss",
-	"pyright",
-	"html",
-})
+-- vim.lsp.enable({
+-- 	"eslint",
+-- 	"lua_ls",
+-- 	"cssmodules",
+-- 	"cssls",
+-- 	"json",
+-- 	"emmet_ls",
+-- 	"marksman",
+-- 	"vtsls",
+-- 	"tailwindcss",
+-- 	"pyright",
+-- 	"html",
+-- })
 
 -- Blink provides more features so I will just ignore this for now
 -- vim.api.nvim_create_autocmd("LspAttach", {
@@ -27,13 +26,12 @@ vim.lsp.enable({
 
 vim.diagnostic.config({
 	-- Use the default configuration
-	virtual_lines = true,
-
+	-- virtual_lines = true,
 	-- Alternatively, customize specific options
-	-- virtual_lines = {
-	--  -- Only show virtual line diagnostics for the current cursor line
-	--  current_line = true,
-	-- },
+	virtual_lines = {
+		-- Only show virtual line diagnostics for the current cursor line
+		current_line = true,
+	},
 })
 
 local map = vim.keymap.set

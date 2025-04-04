@@ -1,16 +1,14 @@
-local util = require("lspconfig.util")
-
 return {
-	cmd = { "pyright" },
+	cmd = { "pyright", "--stdio" },
 	filetypes = { "python" },
-	root_dir = util.root_pattern(
+	root_markers = {
 		"pyproject.toml",
 		"setup.py",
 		"setup.cfg",
 		"requirements.txt",
 		"Pipfile",
-		"pyrightconfi.json"
-	),
+		"pyrightconfi.json",
+	},
 	settings = {
 		python = {
 			venvPath = ".",

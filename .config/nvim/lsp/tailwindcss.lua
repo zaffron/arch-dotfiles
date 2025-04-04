@@ -1,5 +1,5 @@
 return {
-	cmd = { "tailwindcss", "--stdio" },
+	cmd = { "tailwindcss-language-server", "--stdio" },
 	root_markers = {
 		"tailwind.config.js",
 		"tailwind.config.cjs",
