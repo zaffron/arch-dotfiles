@@ -174,7 +174,7 @@ format = '[[ $symbol( $context) ](fg:base bg:blue)]($style)'
 
 [time]
 disabled = false
-time_format = "%R"
+time_format = "%I:%M %p"
 style = "bg:peach"
 format = '[[  $time ](fg:mantle bg:purple)]($style)'
 

@@ -203,6 +203,7 @@
 		"window-rewrite": {
 			"title<.*youtube.*>": " ",
 			"title<.*amazon.*>": " ",
+			"title<.*AWS.*>": " ",
 			"title<.*reddit.*>": " ",
 			"title<.*Picture-in-Picture.*>": " ",
 			"class<firefox|org.mozilla.firefox|librewolf|floorp|mercury-browser|[Cc]achy-browser|google-chrome-stable|google-chrome>": " ",
