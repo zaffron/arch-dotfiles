@@ -1,15 +1,14 @@
 -- vim.lsp.enable({
--- 	"eslint",
--- 	"lua_ls",
--- 	"cssmodules",
--- 	"cssls",
--- 	"json",
--- 	"emmet_ls",
--- 	"marksman",
--- 	"vtsls",
--- 	"tailwindcss",
--- 	"pyright",
--- 	"html",
+--   "cssls",
+--   "cssmodules",
+--   "emmet_ls",
+--   "eslint",
+--   "html",
+--   "json",
+--   "lua_ls",
+--   "pyright",
+--   "tailwindcss",
+--   "vtsls",
 -- })
 
 -- Blink provides more features so I will just ignore this for now
@@ -25,13 +24,13 @@
 -- })
 
 vim.diagnostic.config({
-	-- Use the default configuration
-	-- virtual_lines = true,
-	-- Alternatively, customize specific options
-	virtual_lines = {
-		-- Only show virtual line diagnostics for the current cursor line
-		current_line = true,
-	},
+  -- Use the default configuration
+  -- virtual_lines = true,
+  -- Alternatively, customize specific options
+  virtual_lines = {
+    -- Only show virtual line diagnostics for the current cursor line
+    current_line = true,
+  },
 })
 
 local map = vim.keymap.set
@@ -42,16 +41,16 @@ map("n", "<leader>vws", vim.lsp.buf.workspace_symbol, { desc = "LSP Workspace Sy
 map("n", "<leader>vd", vim.diagnostic.setloclist, { desc = "LSP Show Diagnostics" })
 map("n", "<leader>vca", vim.lsp.buf.code_action, { desc = "LSP Code Action" })
 map("n", "<leader>vce", function()
-	vim.diagnostic.open_float(nil, { focusable = false })
+  vim.diagnostic.open_float(nil, { focusable = false })
 end, { desc = "Show error message" })
 map("n", "<leader>vrr", vim.lsp.buf.references, { desc = "LSP References" })
 map("n", "<leader>vrn", vim.lsp.buf.rename, { desc = "LSP Rename" })
 map("i", "<C-h>", vim.lsp.buf.signature_help, { desc = "LSP Signature Help" })
 
 vim.keymap.set("n", "[d", function()
-	vim.diagnostic.jump({ count = -1, float = true })
+  vim.diagnostic.jump({ count = -1, float = true })
 end, { desc = "Prev Diagnostic" })
 
 vim.keymap.set("n", "]d", function()
-	vim.diagnostic.jump({ count = 1, float = true })
+  vim.diagnostic.jump({ count = 1, float = true })
 end, { desc = "Next Diagnostic" })
