@@ -221,7 +221,7 @@ progressbar {
   border-radius: 7px;
   color: @foreground;
   background-color: @color1;
-  box-shadow: inset 0 0 0 1px #494d64;
+  box-shadow: inset 0 0 0 1px @color9;
   padding: 8px;
 }
 
@@ -240,8 +240,8 @@ progressbar {
 .control-center .notification-row .notification-background {
   border-radius: 7px;
   color: #cad3f5;
-  background-color: #363a4f;
-  box-shadow: inset 0 0 0 1px #494d64;
+  background-color: @color1;
+  box-shadow: inset 0 0 0 1px @color9;
   margin-top: 14px;
 }
 
@@ -437,22 +437,26 @@ progressbar {
 .widget-mpris {
   background: @color1;
   padding: 3px 6px;
-  margin: 20px 6px;
+  margin: 10px 6px;
   border-radius: 10px;
 }
 
 .widget-mpris .widget-mpris-player {
-  padding: 3px 6px;
+  padding: 6px 6px;
   margin: 5px;
+  background: @color1;
+  border-radius: 10px;
 }
 
 .widget-mpris .widget-mpris-title {
+  margin-top: 5px;
   font-weight: 700;
   font-size: 1rem;
 }
 
 .widget-mpris .widget-mpris-subtitle {
   font-size: 0.8rem;
+  margin-top: 5px;
   font-weight: 500;
 }
 
@@ -472,6 +476,7 @@ progressbar {
 }
 
 .widget-mpris .widget-mpris-player .widget-mpris-album-art {
+  margin-top: 5px;
   border-radius: 16px;
 }
 /**

@@ -45,7 +45,7 @@ map("n", "<leader>vce", function()
 end, { desc = "Show error message" })
 map("n", "<leader>vrr", vim.lsp.buf.references, { desc = "LSP References" })
 map("n", "<leader>vrn", vim.lsp.buf.rename, { desc = "LSP Rename" })
-map("i", "<C-h>", vim.lsp.buf.signature_help, { desc = "LSP Signature Help" })
+map("i", "<C-h>", vim.lsp.buf.signature_help, { noremap = true, desc = "LSP Signature Help" })
 
 vim.keymap.set("n", "[d", function()
   vim.diagnostic.jump({ count = -1, float = true })

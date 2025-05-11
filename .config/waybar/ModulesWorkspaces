@@ -218,6 +218,7 @@
 			"class<eu.betterbird.Betterbird>": " ",
 			"class<discord|[Ww]ebcord|Vesktop>": " ",
 			"class<subl>": "󰅳 ",
+      "class<obsidian>": "",
 			"class<mpv>": " ",
 			"class<celluloid|Zoom>": " ",
 			"class<Cider>": "󰎆 ",
