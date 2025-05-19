@@ -1,6 +1,14 @@
 # setting path for cargo bins
 export PATH="$HOME/.cargo/bin:$PATH"
 
+# =================
+# PYENV CONFIG
+# =================
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
+eval "$(pyenv virtualenv-init -)"
+
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="funky"
 
@@ -45,6 +53,7 @@ export FZF_ALT_C_OPTS="--preview 'eza --icons=always --tree --color=always {} | 
 #    TMUX 
 # ==============
 export TMUX_CONF=~/.config/tmux/tmux.conf
+alias ta="tmux attach -t"
 
 # ==============
 #    MAN 
@@ -82,6 +91,3 @@ SAVEHIST=10000
 setopt appendhistory
 
 alias vim='nvim'
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - zsh)"
