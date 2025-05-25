@@ -54,6 +54,8 @@ export FZF_ALT_C_OPTS="--preview 'eza --icons=always --tree --color=always {} | 
 # ==============
 export TMUX_CONF=~/.config/tmux/tmux.conf
 alias ta="tmux attach -t"
+alias tl="tmux list-sessions"
+alias tn="tmux new-session -s"
 
 # ==============
 #    MAN 
@@ -91,3 +93,4 @@ SAVEHIST=10000
 setopt appendhistory
 
 alias vim='nvim'
+alias ...='cd ../..'

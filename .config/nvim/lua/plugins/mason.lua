@@ -37,5 +37,28 @@ return {
       ensure_installed = ensure_installed,
       automatic_enable = true,
     })
+
+    vim.lsp.config("pyright", {
+      settings = {
+        filetypes = { "python" },
+        root_markers = {
+          "pyproject.toml",
+          "setup.py",
+          "setup.cfg",
+          "requirements.txt",
+          "Pipfile",
+          "pyrightconfi.json",
+        },
+        python = {
+          venvPath = ".",
+          venv = ".venv",
+          analysis = {
+            autoSearchPaths = true,
+            useLibraryCodeForTypes = true,
+            diagnosticMode = "workspace",
+          },
+        },
+      },
+    })
   end,
 }
