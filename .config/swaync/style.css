@@ -8,7 +8,7 @@
   all: unset;
   font-size: 14px;
   transition: 200ms;
-  font-family: "JetBrains Mono Nerd Font 10";
+  font-family: Roboto;
 }
 
 /* Avoid 'annoying' backgroud */

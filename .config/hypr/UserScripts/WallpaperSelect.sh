@@ -1,5 +1,4 @@
 #!/bin/bash
-# /* ---- 💫 https://github.com/JaKooLit 💫 ---- */ 
 # This script for selecting wallpapers (SUPER W)
 
 # WALLPAPERS PATH
@@ -87,7 +86,18 @@ main() {
   done
 
   if [[ $pic_index -ne -1 ]]; then
-    swww img -o "$focused_monitor" "${PICS[$pic_index]}" $SWWW_PARAMS
+    echo $focused_monitor
+    if [[ $focused_monitor == "HDMI-A-1" ]]; then
+      echo "HDMI-A-1 ------------- focused"
+      tmp_wall_hdmi="/tmp/converted_wallpaper_hdmi.png"
+      magick "${PICS[$pic_index]}" -resize 1440x2560^ -gravity center -extent 1440x2560 "$tmp_wall_hdmi"
+      swww img -o "$focused_monitor" "$tmp_wall_hdmi" $SWWW_PARAMS
+    else
+      tmp_wall_dpi="/tmp/converted_wallpaper_dpi.png"
+      magick "${PICS[$pic_index]}" -resize 3440x1440^ -gravity center -extent 3440x1440 "$tmp_wall_dpi"
+      echo "DPI ------------- focused"
+      swww img -o "$focused_monitor" "${tmp_wall_dpi}" $SWWW_PARAMS
+    fi
   else
     echo "Image not found."
     exit 1
