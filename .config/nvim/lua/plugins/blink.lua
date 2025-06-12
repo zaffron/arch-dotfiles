@@ -4,6 +4,7 @@ return {
     "saghen/blink.cmp",
     dependencies = {
       "rafamadriz/friendly-snippets",
+      "Kaiser-Yang/blink-cmp-avante",
     },
     event = { "InsertEnter", "CmdlineEnter" },
     opts_extend = { "sources.default", "cmdline.sources", "term.sources" },
@@ -17,8 +18,13 @@ return {
           nerd_font_variant = "normal",
         },
         sources = {
-          default = { "lsp", "path", "snippets", "buffer" },
+          default = { "avante", "lsp", "path", "snippets", "buffer" },
           providers = {
+            avante = {
+              module = "blink-cmp-avante",
+              name = "Avante",
+              opts = {},
+            },
             cmdline = {
               min_keyword_length = 2,
             },

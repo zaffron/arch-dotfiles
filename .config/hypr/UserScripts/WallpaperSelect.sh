@@ -3,6 +3,7 @@
 
 # WALLPAPERS PATH
 wallDIR="$HOME/Pictures/wallpapers"
+wallCacheDir="$HOME/.cache/zaffron-wallpapers"
 SCRIPTSDIR="$HOME/.config/hypr/scripts"
 
 # variables
@@ -54,6 +55,11 @@ swww query || swww-daemon --format xrgb
 # Choice of wallpapers
 main() {
   choice=$(menu | $rofi_command)
+
+  # if cache dir doesnt exist, create it
+  if [ ! -d "$wallCacheDir" ]; then
+    mkdir -p "$wallCacheDir"
+  fi
   
   # Trim any potential whitespace or hidden characters
   choice=$(echo "$choice" | xargs)
@@ -89,11 +95,11 @@ main() {
     echo $focused_monitor
     if [[ $focused_monitor == "HDMI-A-1" ]]; then
       echo "HDMI-A-1 ------------- focused"
-      tmp_wall_hdmi="/tmp/converted_wallpaper_hdmi.png"
+      tmp_wall_hdmi="$wallCacheDir/converted_wallpaper_hdmi.png"
       magick "${PICS[$pic_index]}" -resize 1440x2560^ -gravity center -extent 1440x2560 "$tmp_wall_hdmi"
       swww img -o "$focused_monitor" "$tmp_wall_hdmi" $SWWW_PARAMS
     else
-      tmp_wall_dpi="/tmp/converted_wallpaper_dpi.png"
+      tmp_wall_dpi="$wallCacheDir/converted_wallpaper_dpi.png"
       magick "${PICS[$pic_index]}" -resize 3440x1440^ -gravity center -extent 3440x1440 "$tmp_wall_dpi"
       echo "DPI ------------- focused"
       swww img -o "$focused_monitor" "${tmp_wall_dpi}" $SWWW_PARAMS

@@ -64,7 +64,7 @@ vim.opt.fixeol = true -- Fix missing EOL when saving
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Diagnostic keymaps
-vim.keymap.set("n", "<leader>dl", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
+vim.keymap.set("n", "<leader>dL", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -102,3 +102,24 @@ vim.o.foldmethod = "expr"
 vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 vim.o.foldenable = false -- Do not fold on file open
 vim.o.foldlevel = 99 -- Nothing is folded, even if enabled
+
+-- setting autocommand to restore cursor
+-- https://neovim.io/doc/user/faq.html#faq
+vim.api.nvim_create_autocmd({ "VimEnter", "VimResume" }, {
+  callback = function()
+    vim.opt.guicursor = {
+      "n-v-c:block",
+      "i-ci-ve:ver25",
+      "r-cr:hor20",
+      "o:hor50",
+      "a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor",
+      "sm:block-blinkwait175-blinkoff150-blinkon175",
+    }
+  end,
+})
+
+vim.api.nvim_create_autocmd({ "VimLeave", "VimSuspend" }, {
+  callback = function()
+    vim.opt.guicursor = { "a:ver25" } -- Restore Alacritty beam
+  end,
+})

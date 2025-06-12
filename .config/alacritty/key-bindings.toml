@@ -1,0 +1,5 @@
+[keyboard]
+bindings = [
+  # Vi mode
+  { key = "Space", mods = "Control", action = "ToggleViMode" },
+]

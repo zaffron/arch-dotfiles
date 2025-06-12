@@ -3,10 +3,12 @@ return {
   dependencies = {
     "mason-org/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
+    "jay-babu/mason-nvim-dap.nvim",
   },
   event = "VeryLazy",
   config = function()
     local ensure_installed = {
+      -- LSP servers
       "eslint",
       "cssls",
       "cssmodules_ls",
@@ -16,7 +18,7 @@ return {
       "html",
       "pyright",
       "tailwindcss",
-      "vtsls",
+      -- "vtsls",
       "dockerls",
       "bashls",
       "marksman",
@@ -36,6 +38,34 @@ return {
     mason_lspconfig.setup({
       ensure_installed = ensure_installed,
       automatic_enable = true,
+    })
+
+    -- Set up mason-nvim-dap
+    require("mason-nvim-dap").setup({
+      ensure_installed = {
+        "debugpy",
+        "delve",
+        "js-debug-adapter",
+      },
+      automatic_installation = true,
+      handlers = {
+        function(config)
+          -- all sources with no handler get passed here
+          -- Keep original functionality
+          require("mason-nvim-dap").default_setup(config)
+        end,
+        python = function(config)
+          config.adapters = {
+            type = "executable",
+            command = "python",
+            args = {
+              "-m",
+              "debugpy.adapter",
+            },
+          }
+          require("mason-nvim-dap").default_setup(config) -- don't forget this
+        end,
+      },
     })
 
     vim.lsp.config("pyright", {

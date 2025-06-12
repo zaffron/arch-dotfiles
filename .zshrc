@@ -18,6 +18,7 @@ plugins=(
 	virtualenv
 	aws
 	zsh-syntax-highlighting
+#  zsh-vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -94,3 +95,6 @@ setopt appendhistory
 
 alias vim='nvim'
 alias ...='cd ../..'
+
+
+
