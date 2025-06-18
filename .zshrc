@@ -57,6 +57,7 @@ export TMUX_CONF=~/.config/tmux/tmux.conf
 alias ta="tmux attach -t"
 alias tl="tmux list-sessions"
 alias tn="tmux new-session -s"
+alias tk="tmux kill-session -t"
 
 # ==============
 #    MAN 

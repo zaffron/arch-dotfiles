@@ -84,10 +84,10 @@ vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" }
 --  Use CTRL+<hjkl> to switch between windows
 --
 --  See `:help wincmd` for a list of all window commands
-vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
-vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
-vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
-vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
+-- vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
+-- vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
+-- vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
+-- vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
 vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yanking (copying) text",
@@ -104,22 +104,8 @@ vim.o.foldenable = false -- Do not fold on file open
 vim.o.foldlevel = 99 -- Nothing is folded, even if enabled
 
 -- setting autocommand to restore cursor
--- https://neovim.io/doc/user/faq.html#faq
-vim.api.nvim_create_autocmd({ "VimEnter", "VimResume" }, {
-  callback = function()
-    vim.opt.guicursor = {
-      "n-v-c:block",
-      "i-ci-ve:ver25",
-      "r-cr:hor20",
-      "o:hor50",
-      "a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor",
-      "sm:block-blinkwait175-blinkoff150-blinkon175",
-    }
-  end,
-})
-
-vim.api.nvim_create_autocmd({ "VimLeave", "VimSuspend" }, {
-  callback = function()
-    vim.opt.guicursor = { "a:ver25" } -- Restore Alacritty beam
-  end,
+vim.api.nvim_create_autocmd("ExitPre", {
+  group = vim.api.nvim_create_augroup("Exit", { clear = true }),
+  command = "set guicursor=a:ver90",
+  desc = "Set cursor back to beam when leaving Neovim.",
 })
