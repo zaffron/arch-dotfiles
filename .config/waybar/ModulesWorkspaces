@@ -197,7 +197,6 @@
     "format-window-separator": " ",
     "window-rewrite-default": " ",
     "window-rewrite": {
-      "title<nvim>": " ",
       "title<.*youtube.*>": " ",
       "title<.*amazon.*>": " ",
       "title<.*AWS.*>": " ",
@@ -207,7 +206,7 @@
       "class<brave-browser|google-chrome|google-chrome-stable>": " ",
       "class<kitty|konsole|alacritty>": " ",
       "class<kitty-dropterm>": " ",
-      "class<org.telegram.desktop|io.github.tdesktop_x64.TDesktop>": " ",
+      "class<postman>": " ",
       "class<[Ss]potify>": " ",
       "class<Cursor|cursor-url-handler|VSCode|code-url-handler|code-oss|codium|codium-url-handler|VSCodium>": "󰨞 ",
       "class<thunar>": "󰝰 ",
@@ -215,7 +214,6 @@
       "class<[Tt]hunderbird|[Tt]hunderbird-esr>": " ",
       "class<eu.betterbird.Betterbird>": " ",
       "class<discord|[Ww]ebcord|Vesktop>": " ",
-      "class<subl>": "󰅳 ",
       "class<obsidian>": "",
       "class<mpv>": " ",
       "class<celluloid|Zoom|meet.google.com>": " ",
@@ -230,10 +228,8 @@
       "class<polkit-gnome-authentication-agent-1>": "󰒃 ",
       "class<nwg-look>": " ",
       "class<zen-alpha>": "󰰷 ", //Zen Browser
-      "class<waterfox|waterfox-bin>": " ",
-      "class<microsoft-edge>": " ",
       "class<[Ss]lack>": " ",
       "class<vlc>": "󰕼 "
     }
-  },
+  }
 }

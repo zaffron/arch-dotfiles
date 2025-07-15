@@ -1,0 +1,28 @@
+ /* wallust template - colors-swaync */
+
+@define-color text #EEDACF;
+@define-color background rgba(24,23,23,1);
+@define-color background-alt #181717;
+@define-color cursor #B59383;
+@define-color hovered #717779;
+@define-color button-background #9A7158;
+@define-color button-active #5E3829;
+@define-color border #191715;
+@define-color urgent #DEC2B2;
+
+@define-color color0 #3F3E3E;
+@define-color color1 #131110;
+@define-color color2 #5E3829;
+@define-color color3 #623C2C;
+@define-color color4 #55595B;
+@define-color color5 #885F49;
+@define-color color6 #9A7158;
+@define-color color7 #DEC2B2;
+@define-color color8 #9B887C;
+@define-color color9 #191715;
+@define-color color10 #7D4B37;
+@define-color color11 #82503B;
+@define-color color12 #717779;
+@define-color color13 #B57F62;
+@define-color color14 #CE9675;
+@define-color color15 #DEC2B2;

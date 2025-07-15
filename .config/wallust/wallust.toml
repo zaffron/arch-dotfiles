@@ -34,22 +34,22 @@ threshold = 11
 
 [templates]
 cava.template = 'colors-cava'
-cava.target = '~/.config/cava/config'
+cava.target = '~/dotfiles/.config/cava/config'
 
 hypr.template = 'colors-hyprland.conf'
-hypr.target = '~/.config/hypr/wallust/wallust-hyprland.conf'
+hypr.target = '~/dotfiles/.config/hypr/wallust/wallust-hyprland.conf'
 
 rofi.template = 'colors-rofi.rasi'
-rofi.target = '~/.config/rofi/wallust/colors-rofi.rasi'
+rofi.target = '~/dotfiles/.config/rofi/wallust/colors-rofi.rasi'
 
 waybar.template = 'colors-waybar.css'
-waybar.target = '~/.config/waybar/wallust/colors-waybar.css'
+waybar.target = '~/dotfiles/.config/waybar/wallust/colors-waybar.css'
 
 kitty.template = 'colors-kitty.conf'
-kitty.target = '~/.config/kitty/kitty-colors.conf'
+kitty.target = '~/dotfiles/.config/kitty/kitty-colors.conf'
 
-#swaync.template = 'colors-swaync.css'
-#swaync.target = '~/.config/swaync/wallust/colors-wallust.css'
+swaync.template = 'colors-swaync.css'
+swaync.target = '~/dotfiles/.config/swaync/styles/colors-swaync.css'
 
 #macchina.template = 'colors-macchina.toml'
 #macchina.target = '~/.config/macchina/themes/wallust.toml'

@@ -6,6 +6,7 @@ end
 return {
   "mfussenegger/nvim-dap",
   recommended = true,
+  enabled = false,
   desc = "Debugging support. Requires language specific adapters to be configured. (see lang extras)",
 
   dependencies = {

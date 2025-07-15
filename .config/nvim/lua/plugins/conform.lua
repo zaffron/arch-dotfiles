@@ -33,7 +33,7 @@ return {
       html = webdev_opts,
       json = webdev_opts,
       markdown = webdev_opts,
-      ["markdown.mdx"] = { "prettier", "markdownlint-cli2", "markdown-toc" },
+      ["markdown.mdx"] = { "prettierd", "markdownlint-cli2", "markdown-toc" },
     },
     -- Set default options
     default_format_opts = {

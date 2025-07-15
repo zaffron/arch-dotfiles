@@ -15,7 +15,7 @@
     "format-icons": [
       "󰈸"
     ],
-    "on-click-right": "kitty --title nvtop sh -c 'nvtop'"
+    "on-click-right": "alacritty --title nvtop -e sh -c 'nvtop'"
   },
   "backlight": {
     "interval": 2,
@@ -230,7 +230,7 @@
     "format-alt-click": "click",
     "tooltip": true,
     "tooltip-format": "{used:0.1f}GB/{total:0.1f}G",
-    "on-click-right": "kitty --title btop sh -c 'btop'"
+    "on-click-right": "alacritty --title btop -e sh -c 'btop'"
   },
   "mpris": {
     "interval": 10,
@@ -263,7 +263,7 @@
   },
   "network": {
     "format": "{ifname}",
-    "format-wifi": "{icon}",
+    "format-wifi": "{icon} {essid}",
     "format-ethernet": "󰌘",
     "format-disconnected": "󰌙",
     "tooltip-format": "{ipaddr}  {bandwidthUpBits}  {bandwidthDownBits}",

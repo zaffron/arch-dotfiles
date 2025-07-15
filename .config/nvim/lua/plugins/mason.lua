@@ -3,7 +3,7 @@ return {
   dependencies = {
     "mason-org/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
-    "jay-babu/mason-nvim-dap.nvim",
+    -- "jay-babu/mason-nvim-dap.nvim",
   },
   event = "VeryLazy",
   config = function()
@@ -41,32 +41,32 @@ return {
     })
 
     -- Set up mason-nvim-dap
-    require("mason-nvim-dap").setup({
-      ensure_installed = {
-        "debugpy",
-        "delve",
-        "js-debug-adapter",
-      },
-      automatic_installation = true,
-      handlers = {
-        function(config)
-          -- all sources with no handler get passed here
-          -- Keep original functionality
-          require("mason-nvim-dap").default_setup(config)
-        end,
-        python = function(config)
-          config.adapters = {
-            type = "executable",
-            command = "python",
-            args = {
-              "-m",
-              "debugpy.adapter",
-            },
-          }
-          require("mason-nvim-dap").default_setup(config) -- don't forget this
-        end,
-      },
-    })
+    -- require("mason-nvim-dap").setup({
+    --   ensure_installed = {
+    --     "debugpy",
+    --     "delve",
+    --     "js-debug-adapter",
+    --   },
+    --   automatic_installation = true,
+    --   handlers = {
+    --     function(config)
+    --       -- all sources with no handler get passed here
+    --       -- Keep original functionality
+    --       require("mason-nvim-dap").default_setup(config)
+    --     end,
+    --     python = function(config)
+    --       config.adapters = {
+    --         type = "executable",
+    --         command = "python",
+    --         args = {
+    --           "-m",
+    --           "debugpy.adapter",
+    --         },
+    --       }
+    --       require("mason-nvim-dap").default_setup(config) -- don't forget this
+    --     end,
+    --   },
+    -- })
 
     vim.lsp.config("pyright", {
       settings = {

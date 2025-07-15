@@ -12,7 +12,6 @@
   "control-center-margin-left": 0,
   "notification-2fa-action": true,
   "notification-inline-replies": false,
-  "notification-icon-size": 24,
   "notification-body-image-height": 200,
   "notification-body-image-width": 200,
   "notification-window-width": 300,
@@ -33,15 +32,16 @@
     "title": {
       "text": "Notifications",
       "clear-all-button": true,
-      "button-text": "Clear"
+      "button-text": "Gommage"
     },
     "label": {
       "max-lines": 1,
-      "text": "Notifications"
+      "text": "Expedition 33"
     },
     "mpris": {
-      "image-size": 50,
-      "image-radius": 0,
+      "show-album-art": "always",
+      "autohide": true,
+      "loop-carousel": true,
       "blacklist": ["playerctld", ".*chrome.*"]
     },
     "volume": {

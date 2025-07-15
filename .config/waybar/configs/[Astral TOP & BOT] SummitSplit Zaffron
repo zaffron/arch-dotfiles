@@ -7,6 +7,10 @@
       "$HOME/.config/waybar/ModulesCustom",
       "$HOME/.config/waybar/ModulesGroups"
     ],
+    "custom/zaffron-arch": {
+      "format": "  ",
+      "tooltip": false
+    },
     "layer": "top",
     "exclusive": true,
     "passthrough": false,
@@ -18,6 +22,7 @@
     "margin-left": 8,
     "margin-right": 8,
     "modules-left": [
+      "custom/zaffron-arch",
       "cpu",
       "temperature",
       "memory",
@@ -31,6 +36,8 @@
       "custom/swaync"
     ],
     "modules-right": [
+      "network",
+      "bluetooth",
       "pulseaudio/slider",
       "custom/updater",
       "custom/cycle_wall",
@@ -62,7 +69,7 @@
     ],
     "modules-right": [
       "hyprland/window",
-      "tray",
+      // "tray",
       "mpris",
       "pulseaudio",
       "pulseaudio#microphone",
