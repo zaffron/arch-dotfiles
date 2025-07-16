@@ -27,5 +27,5 @@ trough {
 }
 
 progressbar {
-  background-color: @color1;
+  background-color: red;
 }

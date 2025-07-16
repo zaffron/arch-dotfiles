@@ -70,11 +70,11 @@
 
 .control-center .notification-row .notification-background .notification:hover {
   box-shadow: inset 0 0 0 1px #494d64;
-  background-color: @color11;
   color: #cad3f5;
 }
 
 .control-center .notification-row .notification-background .notification {
+  background-color: @color3;
   padding: 6px;
   border-radius: 6px;
 }
@@ -125,22 +125,24 @@
   .notification-row
   .notification-background
   .notification
-  > *:last-child
-  > * {
-  min-height: 3.4em;
+  .notification-content
+  image {
+  min-height: 30px;
+  min-width: 30px;
+  margin-right: 6px;
 }
 
 .control-center
   .notification-row
   .notification-background
   .notification
-  > *:last-child
-  > *
-  .notification-action {
+  .notification-action
+  button {
   border-radius: 6px;
-  color: @foreground;
-  background-color: #181926;
-  box-shadow: inset 0 0 0 1px #494d64;
+  color: @text;
+  background-color: @button-background;
+  box-shadow: inset 0 0 0 1px @button-background;
+  padding: 6px;
   margin: 7px;
 }
 
@@ -148,24 +150,22 @@
   .notification-row
   .notification-background
   .notification
-  > *:last-child
-  > *
-  .notification-action:hover {
-  box-shadow: inset 0 0 0 1px #494d64;
-  background-color: #363a4f;
-  color: #cad3f5;
+  .notification-action
+  button:hover {
+  box-shadow: inset 0 0 0 1px @color11;
+  background-color: @color11;
+  color: @text;
 }
 
 .control-center
   .notification-row
   .notification-background
   .notification
-  > *:last-child
-  > *
-  .notification-action:active {
-  box-shadow: inset 0 0 0 1px #494d64;
-  background-color: #7dc4e4;
-  color: #cad3f5;
+  .notification-action
+  button:active {
+  box-shadow: inset 0 0 0 1px @button-active;
+  background-color: @button-active;
+  color: @text;
 }
 
 .control-center .notification-row .notification-background .close-button {
@@ -183,26 +183,6 @@
 .control-center .notification-row .notification-background .close-button:hover {
   background-color: #ed8796;
   color: #24273a;
-}
-
-.control-center
-  .notification-row
-  .notification-background
-  .close-button:active {
-  background-color: #ed8796;
-  color: #24273a;
-}
-
-.control-center .notification-row .notification-background:hover {
-  box-shadow: inset 0 0 0 1px #494d64;
-  background-color: #8087a2;
-  color: #cad3f5;
-}
-
-.control-center .notification-row .notification-background:active {
-  box-shadow: inset 0 0 0 1px #494d64;
-  background-color: #7dc4e4;
-  color: #cad3f5;
 }
 
 .notification.critical progress {
