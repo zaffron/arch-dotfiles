@@ -2,7 +2,7 @@
 @import "../waybar/style/catppuccin-themes/mocha.css";
 
 * {
-  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-family: "MonoLisa Nerd Font", monospace;
   font-weight: bold;
   min-height: 0;
   /* set font-size to 100% if font scaling is set to 1.00 using nwg-look */
@@ -20,14 +20,14 @@ window#waybar.empty #window {
 
 tooltip {
   color: white;
-  background: #1e1e2e;
-  opacity: 0.8;
+  background: @color9;
+  opacity: 1;
   border-radius: 10px;
   border-width: 2px;
 }
 
 tooltip label {
-  color: #cdd6f4;
+  color: @text;
 }
 
 /*-----module groups----*/

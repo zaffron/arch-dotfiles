@@ -36,11 +36,12 @@
       "custom/swaync"
     ],
     "modules-right": [
+      "custom/vpn_status",
       "network",
       "bluetooth",
       "pulseaudio/slider",
       "custom/updater",
-      "custom/cycle_wall",
+      "custom/light_dark",
       "custom/lock"
     ]
   },

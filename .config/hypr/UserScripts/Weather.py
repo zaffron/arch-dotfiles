@@ -4,7 +4,7 @@
 
 import json
 import os
-import subprocess
+import re
 
 from pyquery import PyQuery  # install using `pip install pyquery`
 
@@ -37,16 +37,13 @@ html_data = PyQuery(url=url)
 
 # current temperature
 temp = html_data("span[data-testid='TemperatureValue']").eq(0).text()
-# print(temp)
 
 # current status phrase
 status = html_data("div[data-testid='wxPhrase']").text()
 status = f"{status[:16]}.." if len(status) > 17 else status
-# print(status)
 
 # status code
-status_code = html_data("#regionHeader").attr("class").split(" ")[2].split("-")[2]
-# print(status_code)
+status_code = str(html_data("#regionHeader").attr("class")).split(" ")[2].split("-")[2]
 
 # status icon
 icon = (
@@ -100,21 +97,43 @@ air_quality_index = html_data("text[data-testid='DonutChartValue']").text()
 prediction = html_data("section[aria-label='Hourly Forecast']")(
     "div[data-testid='SegmentPrecipPercentage'] > span"
 ).text()
-prediction = prediction.replace("Chance of Rain", "")
+prediction = str(prediction).replace("Chance of Rain", "") if prediction else ""
 prediction = f"\n\n (hourly) {prediction}" if len(prediction) > 0 else prediction
 # print(prediction)
 
+chances_of_rains = html_data("section[aria-label='Hourly Forecast']")(
+    "div[data-testid='SegmentPrecipPercentage'] > span"
+).text()
+chances_of_rains = (
+    str(chances_of_rains).replace("Chance of Rain", "") if chances_of_rains else ""
+)
+chances_of_rains = re.findall(r"\d+%", chances_of_rains)
+
+temperatures = html_data("section[aria-label='Hourly Forecast']")(
+    "div[data-testid='SegmentHighTemp'] > span"
+).text()
+temperatures = str(temperatures).split(" ")
+hours = html_data("section[aria-label='Hourly Forecast']")("h3 > span").text()
+hours = str(hours).split(" ")
+
+hourly_table = "<b>Hour   Temp   Rain</b>\n"
+for hour, temp, chance in zip(hours, temperatures, chances_of_rains):
+    hourly_table += f"{hour.ljust(7)} {temp.ljust(5)} {chance}\n"
+
 # tooltip text
 tooltip_text = str.format(
-    "\t\t{}\t\t\n{}\n{}\n{}\n\n{}\n{}\n{}{}",
+    "\t\t{}\t\t\n{}\n{}\n{}\n{}\n\n{}\n{}\n{}\n\n{}\n{}\n\n{}",
     f'<span size="xx-large">{temp}</span>',
     f"<big> {icon}</big>",
     f"<b>{status}</b>",
     f"<small>{temp_feel_text}</small>",
+    f"--------------------------------",
     f"<b>{temp_min_max}</b>",
     f"{wind_text}\t{humidity_text}",
     f"{visbility_text}\tAQI {air_quality_index}",
-    f"<i> {prediction}</i>",
+    f'<span size="large">    Hourly Predictions</span>',
+    f"--------------------------------",
+    f"{hourly_table}",
 )
 
 # print waybar module data
@@ -124,7 +143,6 @@ out_data = {
     "tooltip": tooltip_text,
     "class": status_code,
 }
-print(json.dumps(out_data))
 
 simple_weather = (
     f"{icon}  {status}\n"
@@ -133,6 +151,8 @@ simple_weather = (
     + f"{humidity_text} \n"
     + f"{visbility_text} AQI{air_quality_index}\n"
 )
+
+print(json.dumps(out_data))
 
 try:
     with open(os.path.expanduser("~/.cache/.weather_cache"), "w") as file:

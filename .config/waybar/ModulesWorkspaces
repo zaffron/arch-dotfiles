@@ -204,7 +204,7 @@
       "title<.*Picture-in-Picture.*>": " ",
       "class<firefox|org.mozilla.firefjx>": " ",
       "class<brave-browser|google-chrome|google-chrome-stable>": " ",
-      "class<kitty|konsole|alacritty>": " ",
+      "class<kitty|konsole|alacritty|wezterm>": " ",
       "class<kitty-dropterm>": " ",
       "class<postman>": " ",
       "class<[Ss]potify>": " ",

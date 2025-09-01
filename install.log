@@ -1,0 +1,9 @@
+[11:38:04 2025-07-25] FETCHING Version 2.40.11
+[11:38:04 2025-07-25] CREATING /home/zaffron/.spicetify
+[11:38:04 2025-07-25] DOWNLOADING https://github.com/spicetify/cli/releases/download/v2.40.11/spicetify-2.40.11-linux-amd64.tar.gz
+[11:38:05 2025-07-25] EXTRACTING /home/zaffron/.spicetify/spicetify.tar.gz
+[11:38:05 2025-07-25] SETTING EXECUTABLE PERMISSIONS TO /home/zaffron/.spicetify/spicetify
+[11:38:05 2025-07-25] REMOVING /home/zaffron/.spicetify/spicetify.tar.gz
+[11:38:05 2025-07-25] APPENDING /home/zaffron/.spicetify to PATH in /home/zaffron/.zshrc
+[11:38:05 2025-07-25] spicetify v2.40.11 was installed successfully to /home/zaffron/.spicetify
+[11:38:05 2025-07-25] Run 'spicetify --help' to get started

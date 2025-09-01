@@ -2,14 +2,21 @@
 {
   "custom/weather": {
     "format": "{}",
-    "format-alt": "{alt}: {}",
-    "format-alt-click": "click",
+    // "format-alt": "{alt}: {}",
+    // "format-alt-click": "click",
     "interval": 3600,
     "return-type": "json",
-    "exec": "$HOME/.config/hypr/UserScripts/Weather.sh",
-    //"exec": "$HOME/.config/hypr/UserScripts/Weather.py",
+    // "exec": "$HOME/.config/hypr/UserScripts/Weather.sh",
+    "exec": "$HOME/.config/hypr/UserScripts/Weather.py",
     "exec-if": "ping wttr.in -c1",
-    "tooltip": true,
+    "tooltip": true
+  },
+  "custom/vpn_status": {
+    "format": "  {}",
+    "interval": 20,
+    "tooltip": false,
+    "return-type": "json",
+    "exec": "$HOME/.config/hypr/UserScripts/VpnStatus.sh",
   },
   "custom/file_manager": {
     "format": " ",

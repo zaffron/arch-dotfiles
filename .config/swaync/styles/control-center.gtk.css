@@ -26,6 +26,12 @@
   padding: 14px;
 }
 
+/** Widget title, that thing with Notifications and gommage button */
+.control-center .widget-title {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .control-center .widget-label:first-child > label {
   font-size: 1.5rem;
   color: @text;
@@ -33,11 +39,15 @@
   font-weight: 900;
   letter-spacing: 2px;
   margin-bottom: 5px;
+  font-family: "Pacifico", cursive;
+  font-style: normal;
+  letter-spacing: 3px;
 }
 
 .control-center .widget-title > label {
   color: @text;
   font-size: 1.3em;
+  font-weight: bold;
 }
 
 .control-center .widget-title button {
@@ -49,14 +59,14 @@
 }
 
 .control-center .widget-title button:hover {
-  box-shadow: inset 0 0 0 1px @color10;
-  background-color: @color10;
+  box-shadow: inset 0 0 0 1px @color1;
+  background-color: @color3;
   color: @foreground;
 }
 
 .control-center .widget-title button:active {
-  box-shadow: inset 0 0 0 1px @color10;
-  background-color: @color10;
+  box-shadow: inset 0 0 0 1px @color3;
+  background-color: @color1;
   color: @foreground;
 }
 

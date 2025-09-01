@@ -97,5 +97,6 @@ setopt appendhistory
 alias vim='nvim'
 alias ...='cd ../..'
 
+export PATH=$PATH:/home/zaffron/.spicetify
 
-
+eval "$(openvpn3 shell-completion)"

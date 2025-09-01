@@ -71,5 +71,9 @@ return {
         fold = { enable = true },
       })
     end,
+    -- vim.api.nvim_set_hl(0, "@comment", { italic = true }),
+    -- vim.api.nvim_set_hl(0, "@keyword", { italic = true }),
+    -- vim.api.nvim_set_hl(0, "@type", { italic = true }),
+    -- vim.api.nvim_set_hl(0, "@storageclass", { italic = true }),
   },
 }
